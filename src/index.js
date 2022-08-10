@@ -100,6 +100,7 @@ async function main() {
       case "openapi3":
         return parseOpenApi3Documentation(entrypointWithSlash);
       default:
+        parserOptions.headers.set("Accept", "application/ld+json");
         return parseHydraDocumentation(entrypointWithSlash, parserOptions);
     }
   };
